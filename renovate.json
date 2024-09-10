@@ -5,7 +5,10 @@
     ":semanticCommits"
   ],
   "assignees": [
-    "gciatto"
+    "gciatto",
+    "aliceStu",
+    "alessandrozecchini",
+    "KaurParamjit"
   ],
   "automerge": true,
   "dependencyDashboard": true,
