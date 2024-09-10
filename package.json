@@ -1,4 +1,8 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unibo-dtm-se-2324-NewsNowBOT/artifact.git"
+  },
   "devDependencies": {
     "semantic-release-preconfigured-conventional-commits": "1.1.85"
   },
