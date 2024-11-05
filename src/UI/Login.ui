@@ -1,0 +1,116 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+
+        Text {
+            id: text1
+            x: 797
+            y: 44
+            width: 326
+            height: 176
+            color: "#a41623"
+            text: qsTr("Login")
+            font.pixelSize: 115
+            font.family: "Verdana"
+        }
+
+        Rectangle {
+            id: rectangle1
+            x: 964
+            y: 273
+            width: 774
+            height: 88
+            color: "#ffb563"
+        }
+
+        Text {
+            id: text2
+            x: 311
+            y: 273
+            width: 338
+            height: 88
+            color: "#a41623"
+            text: qsTr("User Name")
+            font.pixelSize: 51
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text4
+            x: 526
+            y: 649
+            width: 868
+            height: 83
+            color: "#a41623"
+            text: qsTr("Enter your credentials")
+            font.pixelSize: 64
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: button
+            x: 243
+            y: 753
+            width: 447
+            height: 87
+            text: qsTr("Delet")
+            font.pointSize: 35
+            font.family: "Verdana"
+            checkable: false
+        }
+
+        Button {
+            id: button1
+            x: 1021
+            y: 753
+            width: 486
+            height: 87
+            text: qsTr("Enter")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: button2
+            x: 99
+            y: 930
+            width: 295
+            height: 89
+            text: qsTr("Credit")
+            font.pointSize: 35
+            font.family: "Verdana"
+        }
+    }
+
+    Rectangle {
+        id: rectangle2
+        x: 964
+        y: 463
+        width: 774
+        height: 88
+        color: "#ffb563"
+    }
+
+    Text {
+        id: text3
+        x: 303
+        y: 463
+        width: 338
+        height: 88
+        color: "#a41623"
+        text: qsTr("Password")
+        font.pixelSize: 51
+        font.family: "Verdana"
+    }
+}
+
+
