@@ -1,0 +1,150 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
+        anchors.topMargin: 0
+        anchors.bottomMargin: 0
+
+        Text {
+            id: text1
+            x: 245
+            y: 141
+            width: 348
+            height: 80
+            color: "#a41623"
+            text: qsTr("Timestamp")
+            font.pixelSize: 51
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text2
+            x: 245
+            y: 268
+            width: 348
+            height: 80
+            color: "#a41623"
+            text: qsTr("Description")
+            font.pixelSize: 51
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text3
+            x: 245
+            y: 404
+            width: 348
+            height: 80
+            color: "#a41623"
+            text: qsTr("Author")
+            font.pixelSize: 51
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text4
+            x: 245
+            y: 551
+            width: 348
+            height: 80
+            color: "#a41623"
+            text: qsTr("Link")
+            font.pixelSize: 51
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Rectangle {
+            id: rectangle1
+            x: 699
+            y: 141
+            width: 1018
+            height: 80
+            color: "#ffb563"
+        }
+
+        Rectangle {
+            id: rectangle2
+            x: 699
+            y: 246
+            width: 1018
+            height: 123
+            color: "#ffb563"
+        }
+
+        Rectangle {
+            id: rectangle3
+            x: 699
+            y: 395
+            width: 1018
+            height: 98
+            color: "#ffb563"
+        }
+
+        Rectangle {
+            id: rectangle4
+            x: 699
+            y: 518
+            width: 1018
+            height: 146
+            color: "#ffb563"
+        }
+
+        Button {
+            id: commentbutton
+            x: 452
+            y: 713
+            width: 310
+            height: 100
+            text: qsTr("Comment")
+            font.pointSize: 40
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: votebutton
+            x: 1280
+            y: 713
+            width: 244
+            height: 100
+            text: qsTr("Vote")
+            font.pointSize: 44
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 102
+            y: 901
+            width: 301
+            height: 120
+            text: qsTr("Back")
+            font.pointSize: 44
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: deletebutton
+            x: 1537
+            y: 901
+            width: 240
+            height: 108
+            text: qsTr("Delete")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+    }
+}

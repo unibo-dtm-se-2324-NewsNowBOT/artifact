@@ -1,0 +1,58 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+
+        Text {
+            id: text1
+            x: 748
+            y: 72
+            width: 424
+            height: 170
+            color: "#a41623"
+            text: qsTr("News")
+            font.pixelSize: 90
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 166
+            y: 860
+            width: 237
+            height: 108
+            text: qsTr("Back")
+            font.pointSize: 46
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: okbutton
+            x: 1568
+            y: 860
+            width: 237
+            height: 108
+            text: qsTr("OK")
+            font.pointSize: 46
+            font.family: "Verdana"
+        }
+
+        Rectangle {
+            id: rectangle1
+            x: 185
+            y: 271
+            width: 1603
+            height: 509
+            color: "#ffb563"
+        }
+    }
+}
