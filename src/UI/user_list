@@ -1,0 +1,99 @@
+
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtGraphs
+import QtQuick.Timeline
+import QtQuick.Studio.Components
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    RectangleItem {
+        id: rectangle
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        strokeColor: "#000000"
+        fillColor: "#ffd29d"
+        adjustBorderRadius: true
+
+        Text {
+            id: userlist
+            x: 682
+            y: 62
+            width: 557
+            height: 155
+            color: "#a41623"
+            text: qsTr("User List")
+            font.pixelSize: 103
+            horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 138
+            y: 877
+            width: 343
+            height: 100
+            text: qsTr("Back")
+            font.family: "Verdana"
+            font.pointSize: 49
+            icon.height: 22
+            icon.width: 37
+
+            Connections {
+                target: backbutton
+                onClicked: if (condition) {
+                               rectangle.visible = true
+                           }
+            }
+        }
+
+        Button {
+            id: editbutton
+            x: 831
+            y: 877
+            width: 370
+            height: 100
+            text: qsTr("Edit")
+            font.family: "Verdana"
+            font.pointSize: 47
+        }
+
+        Button {
+            id: addnewbutton
+            x: 1469
+            y: 877
+            width: 382
+            height: 100
+            text: qsTr("Add New ")
+            font.family: "Verdana"
+            font.pointSize: 43
+        }
+
+        RectangleItem {
+            id: rectangle1
+            x: 194
+            y: 223
+            width: 1534
+            height: 527
+            fillColor: "#ffb563"
+            adjustBorderRadius: true
+
+            ScrollView {
+                id: scrollView
+                anchors.fill: parent
+                anchors.leftMargin: 32
+                anchors.rightMargin: 369
+                anchors.topMargin: 70
+                anchors.bottomMargin: 108
+                contentWidth: 22
+            }
+        }
+    }
+}

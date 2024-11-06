@@ -1,0 +1,254 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+    id: item1
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: info_editing
+        color: "#ffd29d"
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
+        anchors.topMargin: 0
+        anchors.bottomMargin: 0
+
+        Text {
+            id: text1
+            x: 429
+            y: 83
+            width: 1063
+            height: 102
+            color: "#a41623"
+            text: qsTr("Editing Personal Information")
+            font.pixelSize: 69
+            horizontalAlignment: Text.AlignHCenter
+            style: Text.Normal
+            font.styleName: "Normale"
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: name
+            x: 192
+            y: 253
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Name")
+            anchors.rightMargin: -1369
+            font.pixelSize: 53
+            topPadding: 0
+            font.bold: false
+            font.family: "Verdana"
+            rotation: 0
+        }
+        
+        Rectangle {
+            id: edit_name
+            x: 614
+            y: 253
+            width: 1084
+            height: 87
+            color: "#ffb563"
+
+            TextInput {
+                id: textInput
+                anchors.fill: parent
+                anchors.rightMargin: -1369
+                font.pixelSize: 64
+                selectedTextColor: "#ffb563"
+            }
+
+            TextInput {
+                id: textInput1
+                anchors.fill: parent
+                anchors.leftMargin: 0
+                anchors.rightMargin: 0
+                anchors.topMargin: 130
+                anchors.bottomMargin: -130
+                font.pixelSize: 64
+                selectedTextColor: "#ffb563"
+            }
+        }
+        
+        Text {
+            id: surname
+            x: 192
+            y: 356
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Surname")
+            anchors.rightMargin: -1369
+            font.pixelSize: 53
+            topPadding: 0
+            font.bold: false
+            rotation: 0
+            font.family: "Verdana"
+        }
+        
+        Text {
+            id: dateofbirth
+            x: 192
+            y: 449
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Date of Birth")
+            anchors.rightMargin: -1369
+            font.pixelSize: 53
+            topPadding: 0
+            font.bold: false
+            rotation: 0
+            font.family: "Verdana"
+        }
+
+        Rectangle {
+            id: edit_surname
+            x: 614
+            y: 350
+            width: 1084
+            height: 87
+            color: "#ffb563"
+
+            TextInput {
+                id: textInput2
+                text: qsTr("")
+                anchors.fill: parent
+                anchors.rightMargin: -1369
+                font.pixelSize: 12
+            }
+        }
+
+        Text {
+            id: username
+            x: 192
+            y: 542
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Username")
+            anchors.rightMargin: -1369
+            font.pixelSize: 53
+            topPadding: 0
+            font.bold: false
+            rotation: 0
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: password
+            x: 192
+            y: 635
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Password")
+            anchors.rightMargin: -1369
+            font.pixelSize: 53
+            topPadding: 0
+            font.bold: false
+            rotation: 0
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: role
+            x: 192
+            y: 728
+            width: 361
+            height: 87
+            color: "#a41623"
+            text: qsTr("Role")
+            font.pixelSize: 53
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 120
+            y: 927
+            width: 282
+            height: 92
+            text: qsTr("Back")
+            font.family: "Verdana"
+            font.pointSize: 36
+        }
+
+        Button {
+            id: confirm
+            x: 1528
+            y: 932
+            width: 282
+            height: 92
+            text: qsTr("Confirm")
+            font.family: "Verdana"
+            font.pointSize: 36
+        }
+    }
+
+    Rectangle {
+        id: edit_dateofbirth
+        x: 614
+        y: 447
+        width: 1084
+        height: 87
+        color: "#ffb563"
+    }
+
+    Rectangle {
+        id: edit_username
+        x: 614
+        y: 544
+        width: 1084
+        height: 87
+        color: "#ffb563"
+
+        TextInput {
+            id: textInput4
+            text: qsTr("")
+            anchors.fill: parent
+            anchors.rightMargin: -1369
+            font.pixelSize: 12
+        }
+    }
+
+    Rectangle {
+        id: edit_password
+        x: 614
+        y: 641
+        width: 1084
+        height: 87
+        color: "#ffb563"
+
+        TextInput {
+            id: textInput5
+            text: qsTr("")
+            anchors.fill: parent
+            anchors.rightMargin: -1369
+            font.pixelSize: 12
+        }
+    }
+
+    Rectangle {
+        id: edit_role
+        x: 614
+        y: 734
+        width: 1084
+        height: 87
+        color: "#ffb563"
+        TextInput {
+            id: textInput6
+            text: qsTr("")
+            anchors.fill: parent
+            anchors.rightMargin: -1369
+            font.pixelSize: 12
+        }
+    }
+}
