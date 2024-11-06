@@ -1,0 +1,105 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Studio.Components
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+
+        RectangleItem {
+            id: rectangle1
+            x: 152
+            y: 219
+            width: 828
+            height: 534
+            strokeColor: "#f85e00"
+            fillColor: "#ffb563"
+            adjustBorderRadius: true
+        }
+
+        Button {
+            id: createnewbutton
+            x: 1173
+            y: 219
+            width: 362
+            height: 107
+            text: qsTr("Create New")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: button1
+            x: 1173
+            y: 396
+            width: 362
+            height: 108
+            text: qsTr("Edit")
+            font.family: "Verdana"
+            font.pointSize: 39
+        }
+
+        Button {
+            id: deletebutton
+            x: 1173
+            y: 574
+            width: 362
+            height: 121
+            text: qsTr("Delete")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: updatebutton
+            x: 1173
+            y: 765
+            width: 362
+            height: 99
+            text: qsTr("Update")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: okbutton
+            x: 1610
+            y: 929
+            width: 194
+            height: 91
+            text: qsTr("OK")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 110
+            y: 921
+            width: 290
+            height: 99
+            text: qsTr("Back")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text1
+            x: 582
+            y: 42
+            width: 757
+            height: 143
+            color: "#a41623"
+            text: qsTr("Sources")
+            font.pixelSize: 114
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+    }
+}

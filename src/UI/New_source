@@ -1,0 +1,96 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Studio.Components
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+
+        Text {
+            id: text1
+            x: 679
+            y: 83
+            width: 562
+            height: 138
+            color: "#a41623"
+            text: qsTr("New Source")
+            font.pixelSize: 85
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text2
+            x: 253
+            y: 331
+            width: 221
+            height: 98
+            color: "#f85e00"
+            text: qsTr("Name")
+            font.pixelSize: 55
+            font.family: "Verdana"
+        }
+
+        Text {
+            id: text3
+            x: 253
+            y: 483
+            width: 221
+            height: 98
+            color: "#f85e00"
+            text: qsTr("url")
+            font.pixelSize: 55
+            font.family: "Verdana"
+        }
+
+        RectangleItem {
+            id: rectangle1
+            x: 597
+            y: 331
+            width: 1023
+            height: 98
+            strokeColor: "#ffb563"
+            fillColor: "#ffb563"
+            adjustBorderRadius: true
+        }
+
+        RectangleItem {
+            id: rectangle2
+            x: 597
+            y: 483
+            width: 1023
+            height: 98
+            strokeColor: "#ffb563"
+            fillColor: "#ffb563"
+            adjustBorderRadius: true
+        }
+
+        Button {
+            id: backbutton
+            x: 164
+            y: 894
+            width: 289
+            height: 110
+            text: qsTr("Back")
+            font.pointSize: 45
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: confirmbutton
+            x: 1435
+            y: 894
+            width: 288
+            height: 110
+            text: qsTr("Confirm")
+            font.pointSize: 39
+            font.family: "Verdana"
+        }
+    }
+}
