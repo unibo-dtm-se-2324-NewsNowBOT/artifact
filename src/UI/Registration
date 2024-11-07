@@ -252,7 +252,7 @@ Item {
         }
 
         Button {
-            id: button
+            id: backbutton
             x: 115
             y: 899
             width: 275
@@ -264,7 +264,7 @@ Item {
         }
 
         Button {
-            id: button1
+            id: confirmbutton
             x: 1549
             y: 899
             width: 275

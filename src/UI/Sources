@@ -35,7 +35,7 @@ Item {
         }
 
         Button {
-            id: button1
+            id: editbutton
             x: 1173
             y: 396
             width: 362
@@ -103,3 +103,4 @@ Item {
         }
     }
 }
+

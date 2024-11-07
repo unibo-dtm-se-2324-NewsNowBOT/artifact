@@ -1,55 +1,142 @@
-Item {
-    id: root
-    width: 1920
-    height: 1080
+import QtQuick 6.7
+import QtQuick.Controls 6.7
+import Softwareprova
+import QtQuick.Studio.Components
 
-    Rectangle {
-        id: rectangle
-        color: "#ffd29d"
-        anchors.fill: parent
+Rectangle {
+    id: rectangle
+    width: Constants.width
+    height: Constants.height
+    color: "#ffd29d"
+    property alias buttonCheckable: userconfigurationbutton.checkable
+    property alias buttonHighlighted: userconfigurationbutton.highlighted
 
-        Rectangle {
-            id: rectangle1
-            x: 192
-            y: 252
-            width: 1498
-            height: 563
-            color: "#ffffff"
-        }
+    Button {
+        id: userconfigurationbutton
+        width: 379
+        height: 86
+        text: "User Configuration"
+        anchors.verticalCenter: parent.verticalCenter
+        property int newName: 0
+        font.weight: Font.Normal
+        font.hintingPreference: Font.PreferDefaultHinting
+        highlighted: false
+        flat: false
+        enabled: true
+        display: AbstractButton.TextBesideIcon
+        font.bold: false
+        icon.color: "#f85e00"
+        font.pointSize: 21
+        font.family: "Verdana"
+        anchors.verticalCenterOffset: 284
+        anchors.horizontalCenterOffset: -606
+        checkable: true
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        Text {
-            id: text1
-            x: 797
-            y: 87
-            width: 327
-            height: 89
-            color: "#a41623"
-            text: qsTr("Vote")
-            font.pixelSize: 65
-            horizontalAlignment: Text.AlignHCenter
-            font.family: "Verdana"
-        }
-
-        Button {
-            id: backbutton
-            x: 68
-            y: 934
-            width: 244
-            height: 103
-            text: qsTr("Back")
-            font.pointSize: 35
-            font.family: "Verdana"
-        }
-
-        Button {
-            id: deletebutton
-            x: 1606
-            y: 934
-            width: 247
-            height: 95
-            text: qsTr("Delete")
-            font.family: "Verdana"
-            font.pointSize: 32
+        Connections {
+            target: userconfigurationbutton
+            onClicked: animation.start()
         }
     }
+
+    Button {
+        id: sourcemanagentbutton
+        x: 709
+        y: 781
+        width: 379
+        height: 86
+        text: qsTr("Source Management")
+        font.family: "Verdana"
+        display: AbstractButton.TextOnly
+        font.pointSize: 24
+    }
+
+    Text {
+        id: text1
+        x: 639
+        y: 92
+        width: 643
+        height: 107
+        color: "#a41623"
+        text: qsTr("Benvenuto!")
+        font.pixelSize: 76
+        horizontalAlignment: Text.AlignHCenter
+        font.bold: true
+        font.family: "Verdana"
+    }
+
+    Button {
+        id: downloaddatabutton
+        x: 1258
+        y: 781
+        width: 379
+        height: 86
+        text: qsTr("Download Data")
+        font.family: "Verdana"
+        font.pointSize: 24
+    }
+
+    IsoItem {
+        id: isoIcon
+        x: 200
+        y: 459
+    }
+
+    Image {
+        id: image
+        x: 164
+        y: 459
+        width: 379
+        height: 279
+        source: "../../../Downloads/icons8-users-64.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image1
+        x: 719
+        y: 459
+        width: 369
+        height: 279
+        source: "../../../Downloads/icons8-project-management-64.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Image {
+        id: image2
+        x: 1258
+        y: 459
+        width: 379
+        height: 279
+        source: "../../../Downloads/icons8-download-100.png"
+        fillMode: Image.PreserveAspectFit
+    }
+
+    Button {
+        id: logoutbutton
+        x: 1607
+        y: 958
+        width: 267
+        height: 93
+        text: qsTr("Logout")
+        font.family: "Verdana"
+        font.pointSize: 24
+    }
+
+    Text {
+        id: text2
+        x: 541
+        y: 260
+        width: 838
+        height: 102
+        color: "#f85e00"
+        text: qsTr("What do you want to do?")
+        font.pixelSize: 67
+        font.family: "Tahoma"
+    }
+
+    StateGroup {
+        id: stateGroup
+    }
 }
+

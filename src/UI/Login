@@ -57,7 +57,7 @@ Item {
         }
 
         Button {
-            id: deletlogin
+            id: deletbutton
             x: 243
             y: 753
             width: 447
@@ -69,7 +69,7 @@ Item {
         }
 
         Button {
-            id: enterlogin
+            id: enterbutton
             x: 1021
             y: 753
             width: 486
@@ -80,7 +80,7 @@ Item {
         }
 
         Button {
-            id: creditlogin
+            id: creditbutton
             x: 99
             y: 930
             width: 295

@@ -182,7 +182,7 @@ Item {
         }
 
         Button {
-            id: confirm
+            id: confirmbutton
             x: 1528
             y: 932
             width: 282
