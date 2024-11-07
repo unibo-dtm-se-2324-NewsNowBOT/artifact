@@ -1,0 +1,58 @@
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+
+Item {
+    id: root
+    width: 1920
+    height: 1080
+
+    Rectangle {
+        id: rectangle
+        color: "#ffd29d"
+        anchors.fill: parent
+
+        Rectangle {
+            id: rectangle1
+            x: 192
+            y: 252
+            width: 1498
+            height: 563
+            color: "#ffb543"
+        }
+
+        Text {
+            id: text1
+            x: 797
+            y: 87
+            width: 327
+            height: 89
+            color: "#a41623"
+            text: qsTr("Vote")
+            font.pixelSize: 65
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: backbutton
+            x: 68
+            y: 934
+            width: 244
+            height: 103
+            text: qsTr("Back")
+            font.pointSize: 35
+            font.family: "Verdana"
+        }
+
+        Button {
+            id: deletebutton
+            x: 1606
+            y: 934
+            width: 247
+            height: 95
+            text: qsTr("Delete")
+            font.family: "Verdana"
+            font.pointSize: 32
+        }
+    }
+}
