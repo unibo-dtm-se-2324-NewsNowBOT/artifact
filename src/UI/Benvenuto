@@ -1,6 +1,5 @@
 import QtQuick 6.7
 import QtQuick.Controls 6.7
-import Softwareprova
 import QtQuick.Studio.Components
 
 Rectangle {

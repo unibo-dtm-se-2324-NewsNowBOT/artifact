@@ -1,15 +1,5 @@
 from typing import List
 
-class News:
-    def __init__(self, title, timestamp, description, author, comment_list, mark_list, link=None):
-        self._title = title
-        self._timestamp = timestamp
-        self._description = description
-        self._author = author
-        self._comment_list = comment_list
-        self._mark_list = mark_list
-        self._link = link
-
 class Source:
     def __init__(self, name: str, url: str, news_list: List[News], last_upload: str = None):
         self._name = name

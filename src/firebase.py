@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 from Model.User import User
+from Model.Source import Source
 
 #Initialize the Firebase app
 def initialize_firestore():
@@ -24,11 +25,28 @@ def add_user_object_to_firestore(user_object):
         'password': user_object.password,
         'role' : user_object.role
     }
-
     # add user to Firestore
     db.collection('users').document(user_object.ID).set(user_data)
     print(f"User {user_object.ID} added correctly.")
 
-# Esempio di utilizzo
+"""
+Test
 utente1 = User('user_123', 'Mario','Rossi','MRoss', '18/07/2000', 'mario123', 'admin')
 add_user_object_to_firestore(utente1)
+"""
+
+# add source to Firestone
+def add_source_to_firestore(source_object):
+    db = initialize_firestore()
+
+    # source's data from source_object
+    source_data = {
+        'name': source_object.name,
+        'url': source_object.url,
+        'newsList' : source_object.news_list,
+        'lastUpload' : source_object.last_upload, 
+    }
+
+    # add source to Firestore
+    db.collection('sources').document(source_object.name).set(source_data)
+    print(f"User {source_object.name} added correctly.")
