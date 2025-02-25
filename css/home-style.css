@@ -146,7 +146,7 @@ header {
 /* Hero */
 
 .hero {
-    background-image: url('../world-news.jpg');
+    background-image: url('../images/world-news.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
