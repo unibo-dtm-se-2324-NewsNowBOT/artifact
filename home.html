@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsNow</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Connecting fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/home-style.css">    
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+<!-- Header Section -->
+    <header class="container">
+        <a href="home.html" class="titicon">
+            <img class="icon" src="logo.jpg" alt="icon">
+            
+        </a>
+        <div class="header-right"> 
+            <form action="login.html" class="header-form-join">
+                <button class="btn-reset about-btn">LOGIN</button>
+            </form>  
+            <form action="register.html">
+                <button class="btn-reset about-btn">SIGN UP</button>
+            </form>     
+        </div>   
+    </header>
+
+    
+
+    <main class="main">
+<!-- Navigation -->
+<nav class="navigation" id="nav">
+    <ol class="list-nav flex navbar">
+        <li class="header-list-item">
+            <a href="#1" class="header-link">Why are we useful?</a>
+        </li>
+        <li class="header-list-item">
+            <a href="#2" class="header-link">Newspapers we work with</a>
+        </li>
+        <li class="header-list-item">
+            <a href="#3" class="header-link nav-a-last">Our team</a>
+        </li>
+    </ol>
+</nav>
+
+<!-- Hero Section -->
+        <section class="hero">
+            <div class = "container">
+                <div class="hero-div1">
+                    <h1>NewsNow</h1>
+                    <p class="hero-sub">Stay Informed, Stay Ahead!</p>
+                </div>
+    
+        </section>
+
+<!-- Section 1. Usefulness -->
+        <section class="section-offset" id="1">
+            <div class="container"> 
+                <h2>Why are we useful?</h2>
+                <div class="flex center-item mob-col-rev">
+                    <img class="sec1-4-image" src="news.jpg" alt="Image">
+                    <div class="div-colsec">
+                        <p class="text-col-sec">A news aggregation platform provides diverse perspectives and reduces bias. User voting and comments enhance credibility, encourage critical thinking, and promote engagement. It serves as a centralized, interactive hub for discovering trustworthy journalism efficiently</p>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+<!-- Section 2. Partners -->
+        <section class="section-offset" id="2">
+            <div class="container">
+                <h2>Newspapers we work with</h2>
+                <ul class="list-reset principles-list flex mob-col">
+                    <il class="principles-item flex">
+                        <h3 class="principles-item-header">
+                            Newspaper 1
+                        </h3>
+                        <div class="principles-columns">
+                            <img class="principle-img" src="newspaper.jpg" alt="Hierarchical">   
+                            <p class="principles-item-desc">
+                                description</div>  
+                    </il>
+                    <il class="principles-item flex">
+                        <h3 class="principles-item-header">
+                            Newspaper 2
+                        </h3>
+                        <div class="principles-columns">
+                            <img class="principle-img" src="newspaper.jpg" alt="Legible">  
+                            <p class="principles-item-desc">
+                                description</p>
+                        </div>
+                    </il>
+                    <il class="principles-item flex">
+                        <h3 class="principles-item-header">
+                            Newspaper 3 
+                        </h3>
+                        <div class="principles-columns">
+                            <img class="principle-img" src="newspaper.jpg" alt="Expressive">   
+                            <p class="principles-item-desc">
+                                description</p>
+                        </div>
+                    </il>
+                </ul>
+            </div>
+        </section>
+
+
+<!-- Section 3. Our team -->
+        <section class="section-offset" id="3">
+            <div class="container">
+                <h2>Our team</h2>
+                <ul class="list-reset tools-list flex animation">
+                    <il class="tools-item flex">
+                        <div class="tools-columns">
+                                <img class="tools-img" src="alice.jpg" alt="link to MATERIAL site" >
+                            </a>
+                            <div class="tools-text">
+                                <h3 class="tools-name">
+                                    Alice Sturaro
+                                </h3> 
+                                <p class="tools-desc">
+                                    Software Developer - She maintains and improves the platform</p>  
+                            </div>   
+                        </div>
+                    </il>
+                    <il class="tools-item flex">
+                        <div class="tools-columns">
+                            <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/" target="_blank" class="tools-links">
+                                <img class="tools-img" src="alessandro.jpg" alt="link to COLBLINDOR site" >
+                            </a>
+                            <div class="tools-text">
+                                <h3 class="tools-name">
+                                    Alessandro Zecchini
+                                </h3> 
+                                <p class="tools-desc">
+                                    Data Analysts - He Analyzes user engagement and trends</p>  
+                            </div>   
+                        </div> 
+                    </il>
+                    <il class="tools-item flex">
+                        <div class="tools-columns">
+                            <a href="https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank" class="tools-links">
+                                <img class="tools-img" src="Para.jpg" alt="link to PALLETON site" >
+                            </a>
+                            <div class="tools-text">
+                                <h3 class="tools-name">
+                                    Para Kaur
+                                </h3> 
+                                <p class="tools-desc">
+                                    Journalists & Editor - She curates and verifies news content</div>  
+                        </div>  
+                    </il>
+                     </a>
+                            
+                        </div>    
+                    </il>
+                </ul>  
+            </div>            
+        </section>    
+    </main>
+
+<!-- Footer -->
+    <footer class="foot">
+        <div class="container foot-container">
+            <div class="footer-top flex">
+                <a href="home.html" class="titicon foot-icon">
+                    <img class="icon" src="logo.jpg" alt="icon">
+                    <p class="icon-title">NewsNow</p>
+                </a>   
+            </div>
+           
+            <div class="copyright flex">               
+                <p>  &copy; 2024-25 Copyright of NewsNow </p> 
+           </div>
+        </div>
+    </footer> 
+
+<!-- Button Up -->
+    <a href="#" title="To the top" class="buttonup visible" id="buttonup">
+        <img class="up-color" src="images/Up arrow.png">
+    </a>
+
+<!-- Javascript part -->
+<script src="java.js"></script>
+
+</body>
+</html>
+
