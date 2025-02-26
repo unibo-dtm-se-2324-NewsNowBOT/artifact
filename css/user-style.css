@@ -1,14 +1,12 @@
 html {
     scroll-behavior: smooth;
     box-sizing: border-box;
-    /* paddings will be taken due to their size, will not grow */
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
-    /* elements and pselements will have the same dimensions as the parent */
 }
 
 a {
@@ -387,7 +385,6 @@ header {
     font-weight: bold;
 }
 
-/* Style for the text area */
 .comments-table textarea {
     width: 90%;
     height: 50px;
@@ -397,14 +394,12 @@ header {
     border-radius: 5px;
 }
 
-/* Style for the rating dropdown */
 .rating-dropdown {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
 
-/* Style for the submit button */
 .submit-btn {
     margin-top: 5px;
     padding: 5px 10px;
@@ -454,13 +449,13 @@ select, button {
 }
 
 #search-category-btn {
-background-color: blue; /* Colore di sfondo blu */
-color: white; /* Testo bianco per contrasto */
-border: none; /* Rimuove il bordo */
-cursor: pointer; /* Cambia il cursore al passaggio */
-font-size: 16px; /* Rende il testo piÃ¹ leggibile */
+background-color: blue; 
+color: white; 
+border: none; 
+cursor: pointer; 
+font-size: 16px; 
 }
 
 #search-category-btn:hover {
-background-color: darkblue; /* Cambia colore al passaggio del mouse */
+background-color: darkblue;
 }
