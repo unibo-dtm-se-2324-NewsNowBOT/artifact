@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsNow</title>
+
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <!-- Connecting fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/user-style.css"> 
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+<!-- Header Section -->
+    <header class="container">
+        <a href="user.html" class="titicon">
+            <img class="icon" src="images/logo.jpg" alt="icon">
+            
+        </a>
+        <div class="header-right"> 
+             
+            <form action="home.html">
+                <button class="btn-reset about-btn">LOGOUT</button>
+            </form>     
+        </div>   
+    </header>
+
+    <main class="main">
+
+<!-- Navigation -->
+<nav class="navigation" id="nav">
+    <ol class="list-nav flex navbar">
+        <li class="header-list-item">
+            <a href="#1" class="header-link">Breaking News</a>
+        </li>
+        <li class="header-list-item">
+            <a href="#2" class="header-link">Rating & Comments</a>
+        </li>
+        <li class="header-list-item">
+            <a href="#3" class="header-link">Categories</a>
+        </li>
+        
+    </ol>
+</nav>
+
+<!-- Hero Section -->
+        <section class="hero">
+            <!-- to limit the content in the middle - container -->
+            <div class = "container">
+                <!-- for grouping and positioning - hero-div1 -->
+                <div class="hero-div1">
+                    <input type="text" class="search-bar" placeholder="Search...">
+                </div>
+    
+        </section>
+
+    
+<!-- Section 1. Breaking News -->
+<section class="section-offset" id="1">
+    <h2>Breaking News</h2>
+    <table class="news-table">
+        <thead>
+            <tr>
+                <th>News Title</th>
+                <th>Link</th>
+                <th>Category</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>News 1</td>
+                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
+                <td>Economy</td>
+                <td>abc</td>
+            </tr>
+            <tr>
+                <td>News 2</td>
+                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
+                <td>Politics</td>
+                <td>def</td>
+            </tr>
+            <tr>
+                <td>News 3</td>
+                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
+                <td>Sport</td>
+                <td>ghi</td>
+            </tr>
+            <tr>
+                <td>News 4</td>
+                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
+                <td>Technology</td>
+                <td>jkl</td>
+            </tr>
+            <tr>
+                <td>News 5</td>
+                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
+                <td>Economy</td>
+                <td>mno</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<!-- Section 2. Comments & Ratings -->
+<section class="section-offset" id="2">
+    <h2>Comments & Ratings</h2>
+    <table class="comments-table">
+        <thead>
+            <tr>
+                <th>News Title</th>
+                <th>User (Email)</th>
+                <th>Comment</th>
+                <th>Rating</th>
+                <th>Write a Comment</th>
+                <th>Give a Rating</th>
+                <th>Average Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- News 1 -->
+            <tr>
+                <td rowspan="3">News</td>
+                <td>user1@example.com</td>
+                <td>Very informative article!</td>
+                <td>9/10</td>
+                <td rowspan="3">
+                    <textarea placeholder="Write your comment..."></textarea>
+                    <button class="submit-btn">Submit</button>
+                </td>
+                <td rowspan="3">
+                    <select class="rating-dropdown">
+                        <option value="10">10/10</option>
+                        <option value="9">9/10</option>
+                        <option value="8">8/10</option>
+                        <option value="7">7/10</option>
+                        <option value="6">6/10</option>
+                        <option value="5">5/10</option>
+                        <option value="4">4/10</option>
+                        <option value="3">3/10</option>
+                        <option value="2">2/10</option>
+                        <option value="1">1/10</option>
+                    </select>
+                    <button class="submit-btn">Rate</button>
+                </td>
+                <td rowspan="3">8.3/10</td>
+            </tr>
+            <tr>
+                <td>user2@example.com</td>
+                <td>Good, but could be more detailed.</td>
+                <td>7/10</td>
+            </tr>
+            <tr>
+                <td>user3@example.com</td>
+                <td>Excellent insights!</td>
+                <td>9/10</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Section 3. Categories -->
+        <section class="section-offset" id="3">
+            <div class="container">
+                    <h2>Categories</h2>
+                    <select id="category-select">
+                        <option value="">Select a Category</option>
+                        <option value="Politics">Politics</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Economy">Economy</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                    <button id="search-category-btn">Search</button>
+            </div>
+        </section>
+
+<!-- Footer -->
+<footer class="foot">
+    <div class="container foot-container">
+        <div class="footer-top flex">
+            <a href="home.html" class="titicon foot-icon">
+                <img class="icon" src="images/logo.jpg" alt="icon">
+                <p class="icon-title">NewsNow</p>
+            </a>   
+        </div>
+       
+        <div class="copyright flex">               
+            <p>  &copy; 2024-25 Copyright of NewsNow </p> 
+       </div>
+    </div>
+</footer> 
+
+</body>
+</html>

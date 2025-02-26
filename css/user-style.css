@@ -1,0 +1,466 @@
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /* paddings will be taken due to their size, will not grow */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* elements and pselements will have the same dimensions as the parent */
+}
+
+a {
+    padding-right: 20px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F3EF;
+    color: #232323;
+    overflow-x:hidden;
+}
+
+/* glob */
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+h1 {
+    margin: 0;
+    padding-top: 80px;
+    font-weight: 800;
+    font-size: 138px;
+    line-height: 130px;
+    color: rgb(8, 0, 255);
+}
+
+h2 {
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.section-offset {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+.titicon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.icon-title {
+    font-size: x-large;
+    font-weight: bold;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-form-join{
+    margin-right: 20px;
+}
+
+.about-btn {
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right, red, blue);
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    min-width: 100px;
+    font-size: medium;
+}
+
+.about-btn:hover {
+    transform: scale(0.8);
+}
+
+
+/* Hero */
+
+.hero {
+    background-image: url('../images/world-news.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    opacity: 0.7;
+    text-align: center;
+    color: black(255, 255, 255);
+}
+
+.hero-div1 {
+    height: 70vh;
+}
+
+.hero-sub {
+    font-weight: 500;
+    font-size: 3.5vw;
+    margin: 0;
+}
+
+.hero-div2 {
+    height: 15vh;
+}
+
+.hero-more {
+    font-weight: 500;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.arrow {
+    color: #ffffff;
+}
+
+
+/* Navigation */
+
+.navigation {
+    background-color: #163ec4;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 7;
+}
+
+.list-nav {
+    margin: 0;
+    padding: 0;
+}
+
+.header-list-item {
+    font-family: 'Inter', sans-serif;
+    font-size: min(4.8vh, 25px);
+    text-align: center;
+    margin-left: 30px;
+}
+
+.header-list-item:first-child{
+    margin-left: 45px;
+}
+
+
+.header-list-item:not(:last-child) {
+    padding-right: 30px;
+}
+
+.header-list-item:last-child {
+    padding-right: 15px;
+}
+
+.header-link{
+    padding: 0;
+    background: none;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Footer */
+.foot {
+    background-color: #232323;
+    color: #ffffff;
+    
+}
+
+.foot-container{
+    padding: 20px 0;
+}
+
+.footer-top{
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    margin-bottom: 50px;
+}
+
+.foot-icon{
+    padding: 0;
+}
+
+.foot-content {
+    justify-content: space-between;
+    margin: 0 20px;
+    margin-bottom: 50px;
+}
+
+.foot-info {
+    margin: 0;
+    margin-right: 20px;
+    max-width: 700px;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.foot-link {
+    padding: 0;
+}
+
+.qr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.imgqr {
+    max-width: 150px;
+}
+
+.copyright {
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-grow: 3;
+}
+
+.copyright p{
+    margin: 0;
+    padding: 0;
+}
+
+/* Search bar */    
+
+.hero-div1 {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 70vh;
+        position: relative;
+   }
+    
+.search-bar {
+        width: 50%; 
+        max-width: 500px;
+        padding: 10px;
+        border-radius: 30px;
+        border: 2px solid #232323;
+        font-size: 1.2rem;
+        text-align: center;
+}
+
+/* Table 1 */
+
+.table-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.news-table {
+    width: 60%; /* La tabella ora occupa il 60% della larghezza del sito */
+    margin: 0 auto; /* La centra orizzontalmente */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.news-table th, .news-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.news-table th {
+    background-color: #163ec4;
+    color: white;
+    font-weight: bold;
+}
+
+.news-table td a {
+    color: #163ec4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-table td a:hover {
+    text-decoration: underline;
+}
+
+/* Table 2 - Comments & Ratings */
+
+.section-offset {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.comments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.comments-table th, .comments-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.comments-table th {
+    background-color: #163ec4;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style for the text area */
+.comments-table textarea {
+    width: 90%;
+    height: 50px;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for the rating dropdown */
+.rating-dropdown {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Style for the submit button */
+.submit-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #163ec4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0e2a8a;
+}
+
+/* Table 3 - Categories */
+
+.search-category {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+select, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+#search-category-btn {
+background-color: blue; /* Colore di sfondo blu */
+color: white; /* Testo bianco per contrasto */
+border: none; /* Rimuove il bordo */
+cursor: pointer; /* Cambia il cursore al passaggio */
+font-size: 16px; /* Rende il testo piÃ¹ leggibile */
+}
+
+#search-category-btn:hover {
+background-color: darkblue; /* Cambia colore al passaggio del mouse */
+}
