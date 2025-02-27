@@ -32,18 +32,17 @@
 
 								<div class="form-group">
 									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="password" type="password" class="form-control" name="password" required>
 									<div class="invalid-feedback">
 										Password is required
 									</div>
 								</div>
 
 								<div class="form-group">
-									<div class="custom-checkbox custom-control">
-										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
-										
-										
-									</div>
+									<select id="role">
+										<option value="user">User</option>
+										<option value="admin">Admin</option>
+									</select>
 								</div>
 
 								<div class="form-group">
@@ -52,7 +51,7 @@
 									</button>
 								</div>
 								<div class="mt-4 text-center">
-									Already have an account? <a href="images/login.html">Login</a>
+									Already have an account? <a href="login.html">Login</a>
 								</div>
 							</form>
 						</div>
@@ -67,15 +66,27 @@
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script type="module" src="../js/auth.js"></script>
-    <script>
-        document.getElementById("form").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            registerUser(email, password).then(() => alert("Registrazione completata!"))
-                                       .catch(error => alert(error.message));
-        });
+	<script type="module">
+        import { registerUser } from "./js/auth.js";
+
+			document.querySelector(".my-login-validation").addEventListener("submit", async (e) => {
+			e.preventDefault();
+			
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+			const role = document.getElementById("role").value;
+
+			try {
+				console.log("Attempting to register user...");
+				await registerUser(email, password, role);
+				console.log("Registration successful");
+				alert("Registration complete! You can now sign in.");
+				window.location.replace("login.html");
+			} catch (error) {
+				console.error("Registration failed:", error);
+				alert("Error: " + error.message);
+			}
+		});
     </script>
 </body>
 </html>
