@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewsNow</title>
-
+   
     <link rel="icon" type="image/png" href="images/favicon.webp">
-    <link rel="icon" type="image/x-icon" href="logo.jpg">
 
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
     <!-- Connecting fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="icon" type="image/png" href="images/favicon.webp">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/user-style.css"> 
 
@@ -29,7 +30,7 @@
 <!-- Header Section -->
     <header class="container">
         <a href="user.html" class="titicon">
-            <img class="icon" src="images/logo.jpg" alt="icon">
+            <img class="icon" src="images/logo.webp" alt="icon">
             
         </a>
         <div class="header-right"> 
@@ -70,46 +71,46 @@
     
 <!-- Section 1. Breaking News -->
 <section class="section-offset" id="1">
-    <h2>Breaking News</h2>
+    <h2>User List</h2>
     <table class="news-table">
         <thead>
             <tr>
-                <th>News Title</th>
-                <th>Link</th>
-                <th>Category</th>
-                <th>Source</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>News 1</td>
-                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
-                <td>Economy</td>
-                <td>abc</td>
+                <td>Name1</td>
+                <td>Surname1</td>
+                <td>Email1</td>
+                <td>Dob1</td>
             </tr>
             <tr>
-                <td>News 2</td>
-                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
-                <td>Politics</td>
-                <td>def</td>
+                <td>Name2</td>
+                <td>Surname2</td>
+                <td>Email2</td>
+                <td>Dob2</td>
             </tr>
             <tr>
-                <td>News 3</td>
-                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
-                <td>Sport</td>
-                <td>ghi</td>
+                <td>Name3</td>
+                <td>Surname3</td>
+                <td>Email3</td>
+                <td>Dob3</td>
             </tr>
             <tr>
-                <td>News 4</td>
-                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
-                <td>Technology</td>
-                <td>jkl</td>
+                <td>Name4</td>
+                <td>Surname4</td>
+                <td>Email4</td>
+                <td>Dob4</td>
             </tr>
             <tr>
-                <td>News 5</td>
-                <td><a href="https://www.rainews.it" target="_blank">Click here</a></td>
-                <td>Economy</td>
-                <td>mno</td>
+                <td>Name5</td>
+                <td>Surname5</td>
+                <td>Email5</td>
+                <td>Dob5</td>
             </tr>
         </tbody>
     </table>
@@ -203,26 +204,6 @@
        </div>
     </div>
 </footer> 
-
-<script type="module">
-    import { logoutUser, checkUserStatus } from "../js/auth.js";
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const logoutButton = document.getElementById("logout");
-
-        if (logoutButton) {
-            logoutButton.addEventListener("click", () => {
-                logoutUser().then(() => window.location.replace("../login/login.html"));
-            });
-        }
-
-        checkUserStatus(user => {
-            if (!user) {
-                window.location.replace("../login/login.html");
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
