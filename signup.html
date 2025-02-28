@@ -82,13 +82,15 @@
 			document.querySelector(".my-login-validation").addEventListener("submit", async (e) => {
 			e.preventDefault();
 			
+			const name = document.getElementById("name").value;
+			const surname = document.getElementById("surname").value;
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 			const role = document.getElementById("role").value;
 
 			try {
 				console.log("Attempting to register user...");
-				await registerUser(email, password, role);
+				await registerUser(name, surname, email, password, role);
 				console.log("Registration successful");
 				alert("Registration complete! You can now sign in.");
 				window.location.replace("login.html");

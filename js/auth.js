@@ -5,33 +5,44 @@ import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/fireb
 // get Firestore instance
 const db = getFirestore();
 
-export async function registerUser(email, password, role) {
+function isValidEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return regex.test(email);
+}
+
+export async function registerUser(name, surname, email, password, role) {
     try {
-        // Crea l'utente con email e password
+        /// Check if the email is valid
+        if (!isValidEmail(email)) {
+            throw new Error("Invalid email format");
+        }
+
+        // Create user with email and password
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         
-        // Verifica che l'utente sia stato creato
+        // Verify that the user has been created
         if (userCredential && userCredential.user) {
             const user = userCredential.user;
 
-            // Salva il ruolo dell'utente in Firestore
+            // Save user data in Firestore (name, surname, email and role)
             await setDoc(doc(db, "users", user.uid), {
-                email: user.email,
+                name: name,          
+                surname: surname,    
+                email: user.email, 
                 role: role
             });
 
-            // Successo
+            // Success
             console.log("User registered successfully!");
-            return user;  // Restituisce l'utente registrato
+            return user;  // Returns the registered user
         } else {
             throw new Error("User creation failed");
         }
     } catch (error) {
-        console.error("Error during user registration:", error);
-        throw error;  // Propaga l'errore al chiamante
+        console.error("Error during user registration:", error.message);
+        throw error;
     }
 }
-
 
 // login funtion
 export function loginUser(email, password) {
@@ -53,5 +64,9 @@ export async function getUserRole(uid) {
         return null;
     }
 }
-
+// function to control if the user is logged
+export function checkUserStatus(userCallback) {
+    const user = auth.currentUser; // Usa auth corrente per ottenere l'utente
+    userCallback(user); // Passa l'utente al callback
+  }
 
