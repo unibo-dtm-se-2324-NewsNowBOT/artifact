@@ -1,5 +1,5 @@
 import { auth } from "./firebase-config.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // get Firestore instance
@@ -64,9 +64,10 @@ export async function getUserRole(uid) {
         return null;
     }
 }
-// function to control if the user is logged
-export function checkUserStatus(userCallback) {
-    const user = auth.currentUser; // Usa auth corrente per ottenere l'utente
-    userCallback(user); // Passa l'utente al callback
-  }
 
+  export function checkUserStatus(userCallback) {
+      // Firebase listener to update user's state
+      onAuthStateChanged(auth, (user) => {
+          userCallback(user);  
+      });
+  }

@@ -7,7 +7,7 @@
     <title>NewsNow</title>
 
     <link rel="icon" type="image/png" href="images/favicon.webp">
-    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <link rel="icon" type="image/x-icon" href="images/logo.webp">
 
     <!-- Connecting fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,11 +29,10 @@
 <!-- Header Section -->
     <header class="container">
         <a href="user.html" class="titicon">
-            <img class="icon" src="images/logo.jpg" alt="icon">
-            
+            <img class="icon" src="images/logo.webp" alt="icon">
         </a>
         <div class="header-right"> 
-             
+            <div id="user-welcome"></div>
             <form action="home.html">
                 <button class="btn-reset about-btn">LOGOUT</button>
             </form>     
@@ -51,10 +50,6 @@
         <li class="header-list-item">
             <a href="#2" class="header-link">Rating & Comments</a>
         </li>
-        <li class="header-list-item">
-            <a href="#3" class="header-link">Categories</a>
-        </li>
-        
     </ol>
 </nav>
 
@@ -74,7 +69,7 @@
     <div id="news-container">
         <p>Caricamento notizie...</p>
     </div>
-</section>
+<!--</section>
     <h2>Breaking News</h2>
     <table class="news-table">
         <thead>
@@ -128,7 +123,7 @@
         <p>Select a news to comment and rating.</p>
     </div>
 </section>
-    <h2>Comments & Ratings</h2>
+ <!-- <h2>Comments & Ratings</h2>> 
     <table class="comments-table">
         <thead>
             <tr>
@@ -184,7 +179,7 @@
 </section>
 --> 
 
-<!-- Section 3. Categories -->
+<!-- Section 3. Categories -
         <section class="section-offset" id="3">
             <div class="container">
                     <h2>Categories</h2>
@@ -198,12 +193,13 @@
                     <button id="search-category-btn">Search</button>
             </div>
         </section>
+    -->
 <!-- Footer -->
 <footer class="foot">
     <div class="container foot-container">
         <div class="footer-top flex">
             <a href="home.html" class="titicon foot-icon">
-                <img class="icon" src="images/logo.jpg" alt="icon">
+                <img class="icon" src="images/logo.webp" alt="icon">
                 <p class="icon-title">NewsNow</p>
             </a>   
         </div>
@@ -215,10 +211,10 @@
 </footer> 
 
 <script type="module">
-    import { logoutUser, checkUserStatus } from "../js/auth.js";
+    import { logoutUser, checkUserStatus } from "./js/auth.js";
 
     document.addEventListener("DOMContentLoaded", () => {
-        const logoutButton = document.getElementById("logout");
+        const logoutButton = document.querySelector(".about-btn");  
 
         if (logoutButton) {
             logoutButton.addEventListener("click", () => {
@@ -226,10 +222,14 @@
             });
         }
 
-        checkUserStatus(user => {
-            if (!user) {
-                window.location.replace("login.html");
-            }
+        checkUserStatus((user) => {
+        if (user) {
+            // The user is logged in, you can view his data or other sections
+            document.getElementById("user-welcome").innerText = `Welcome, ${user.email}`;
+        } else {
+            // The user is not logged in, redirect to login page
+            window.location.replace("login.html");
+        }
         });
     });
 </script>
