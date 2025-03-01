@@ -222,13 +222,13 @@
 
         if (logoutButton) {
             logoutButton.addEventListener("click", () => {
-                logoutUser().then(() => window.location.replace("../login/login.html"));
+                logoutUser().then(() => window.location.replace("login.html"));
             });
         }
 
         checkUserStatus(user => {
             if (!user) {
-                window.location.replace("../login/login.html");
+                window.location.replace("login.html");
             }
         });
     });
