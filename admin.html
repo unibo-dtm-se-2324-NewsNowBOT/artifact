@@ -45,7 +45,10 @@
                     <a href="#2" class="header-link">Rating & Comments</a>
                 </li>
                 <li class="header-list-item">
-                    <a href="#3" class="header-link"></a>
+                    <a href="#3" class="header-link">Add RSS feed</a>
+                </li>
+                <li class="header-list-item">
+                    <a href="#4" class="header-link">RSS feed List</a>
                 </li>
             </ol>
         </nav>
@@ -96,6 +99,40 @@
                 </tbody>
             </table>
         </section>
+        
+        <!-- Section 3. Form to add new RSS link -->
+        <section class="add-rss-form">
+            <h2>Add a new RSS link</h2>
+            <form id="rss-form">
+                <label for="rss-name">Feed name:</label>
+                <input type="text" id="rss-name" name="rss-name" required>
+                
+                <label for="rss-url">URL:</label>
+                <input type="url" id="rss-url" name="rss-url" required>
+
+                <button type="submit">Add Feed</button>
+            </form>
+        </section>
+         <!-- Comments will be populated dynamically-->                    
+        <div id="message"></div>
+
+        <!-- Section 4. RSSfeed list -->
+        <section class="section-offset" id="rss-list">
+            <h2>Lista dei Feed RSS</h2>
+            <table id="rss-table" class="table">
+                <thead>
+                    <tr>
+                        <th>Feed name</th>
+                        <th>URL</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="rss-table-body">
+                    <!-- RSS feed will be populated dynamically-->
+                </tbody>
+            </table>
+            <p id="message"></p>
+        </section>
 
         <!-- Footer -->
         <footer class="foot">
@@ -117,7 +154,7 @@
     <script type="module">
         // Import Firebase and Auth libraries
         import { db } from './js/firebase-config.js';
-        import { collection, getDocs, doc, updateDoc, deleteDoc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+        import { collection, getDocs, doc, updateDoc, deleteDoc, getDoc, addDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
         import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
         import { logoutUser, checkUserStatus } from "./js/auth.js";
     
@@ -296,7 +333,110 @@
                 }
             });
         });
+
+    document.getElementById("rss-form").addEventListener("submit", async (event) => {
+    event.preventDefault();  // Prevents default submit behavior
+
+    const rssName = document.getElementById("rss-name").value;
+    const rssUrl = document.getElementById("rss-url").value;
+
+    if (!rssName || !rssUrl) {
+        document.getElementById("message").innerText = "Per favore, compila entrambi i campi.";
+        return;
+    }
+
+    try {
+        // Add a new RSS feed to firestore
+        await addDoc(collection(db, "rssFeeds"), {
+            name: rssName,
+            url: rssUrl
+        });
+
+        document.getElementById("message").innerText = "Feed RSS aggiunto con successo!";
+        // Clean the form
+        document.getElementById("rss-name").value = "";
+        document.getElementById("rss-url").value = "";
+    } catch (error) {
+        console.error("Errore durante l'aggiunta del feed:", error);
+        document.getElementById("message").innerText = "Errore nell'aggiunta del feed. Riprova.";
+    }
+});
+
+    // Function to load RSS feeds from the Firestore collection
+    async function loadRssFeeds() {
+        const rssTableBody = document.getElementById("rss-table-body");
+        rssTableBody.innerHTML = "<tr><td colspan='3'>Loading RSS feeds...</td></tr>";  // Loading message
+
+        try {
+            const querySnapshot = await getDocs(collection(db, "rssFeeds"));
+            if (querySnapshot.empty) {
+                rssTableBody.innerHTML = "<tr><td colspan='3'>No feeds available.</td></tr>";
+            } else {
+                let tableHTML = "";
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    tableHTML += `
+                        <tr id="rss-${doc.id}">
+                            <td>${data.name}</td>
+                            <td>${data.url}</td>
+                            <td>
+                                <button class="delete-btn" onclick="deleteRssFeed('${doc.id}')">Delete</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+                rssTableBody.innerHTML = tableHTML;
+            }
+        } catch (error) {
+            console.error("Error retrieving RSS feeds:", error);
+            rssTableBody.innerHTML = "<tr><td colspan='3'>Error retrieving RSS feeds.</td></tr>";
+        }
+    }
+
+    // Function to delete an RSS feed from the Firestore collection
+    window.deleteRssFeed = async function(rssId) {
+        try {
+            await deleteDoc(doc(db, "rssFeeds", rssId));
+            document.getElementById(`rss-${rssId}`).remove();  // Remove the table row
+            document.getElementById("message").innerText = "RSS Feed deleted successfully!";
+        } catch (error) {
+            console.error("Error deleting RSS feed:", error);
+            document.getElementById("message").innerText = "Error deleting RSS feed.";
+        }
+    };
+
+    // Adding a new RSS feed
+    document.getElementById("rss-form").addEventListener("submit", async (event) => {
+        event.preventDefault();  // Prevent default form submission behavior
+
+        const rssName = document.getElementById("rss-name").value;
+        const rssUrl = document.getElementById("rss-url").value;
+
+        if (!rssName || !rssUrl) {
+            document.getElementById("message").innerText = "Please fill in both fields.";
+            return;
+        }
+
+        try {
+            // Add the new RSS feed to Firestore
+            await addDoc(collection(db, "rssFeeds"), {
+                name: rssName,
+                url: rssUrl
+            });
+
+            document.getElementById("message").innerText = "RSS Feed added successfully!";
+            // Clear the form after submission
+            document.getElementById("rss-name").value = "";
+            document.getElementById("rss-url").value = "";
+            loadRssFeeds();  // Reload the feed list after adding a new one
+        } catch (error) {
+            console.error("Error adding the feed:", error);
+            document.getElementById("message").innerText = "Error adding the feed. Please try again.";
+        }
+    });
+
+    // Load RSS feeds when the page is ready
+    document.addEventListener("DOMContentLoaded", loadRssFeeds);
     </script>
-    
 </body>
 </html>

@@ -234,35 +234,39 @@
     });
 </script>
 
-<script>
+<script type="module">
+    import { db } from './js/firebase-config.js';
+    import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
     async function fetchRSS(url) {
         try {
             const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
             const data = await response.json();
 
             if (data.status === "ok") {
-                return data.items; // To get the articles
+                return data.items; // To get articles
             } else {
-                console.error("Error in the feed recovery:", data);
+                console.error("Errore nel recupero del feed:", data);
                 return [];
             }
         } catch (error) {
-            console.error("Error during RSS recovery:", error);
+            console.error("Errore durante il recupero del feed RSS:", error);
             return [];
         }
     }
 
     async function loadNews() {
         const newsContainer = document.getElementById("news-container");
-        newsContainer.innerHTML = "<p>Loading the news...</p>";
+        newsContainer.innerHTML = "<p>Caricamento delle notizie...</p>";
 
-        // Array of headlines with related RSS feeds
-        const newsSources = [
-            { name: "Ansa", url: "https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml" },
-            { name: "Il Sole 24 Ore", url: "https://www.ilsole24ore.com/rss/economia.xml" },
-            { name: "Corriere della Sera", url: "https://xml2.corriereobjects.it/rss/homepage.xml" },
-            { name: "La Repubblica", url: "https://www.repubblica.it/rss/homepage/rss2.0.xml" }
-        ];
+        // Upload RSS feeds from Firestore
+        const rssCollection = collection(db, "rssFeeds");  // Add the name of your collection
+        const querySnapshot = await getDocs(rssCollection);
+        const newsSources = [];
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            newsSources.push({ name: data.name, url: data.url });
+        });
 
         let newsHTML = "";
 
@@ -270,17 +274,18 @@
             const articles = await fetchRSS(source.url);
             if (articles.length > 0) {
                 newsHTML += `<h3>${source.name}</h3><ul>`;
-                articles.slice(0, 5).forEach(article => { // Shows only first 5 news
+                articles.slice(0, 5).forEach(article => { // Show only the first 5 news
                     newsHTML += `<li><a href="${article.link}" target="_blank">${article.title}</a></li>`;
                 });
                 newsHTML += `</ul>`;
             }
         }
 
-        newsContainer.innerHTML = newsHTML || "<p>No news available</p>";
+        newsContainer.innerHTML = newsHTML || "<p>Nessuna notizia disponibile</p>";
     }
 
     document.addEventListener("DOMContentLoaded", loadNews);
+
 </script>
 <script type="module" src="js/comments.js"></script>
 
