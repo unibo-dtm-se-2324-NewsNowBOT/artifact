@@ -133,7 +133,7 @@ header {
     transition: all 0.3s ease-in-out;
     border-radius: 30px;
     font-weight: bold;
-    font-family: 'Inter', sans-serif;
+    font-family: 'georiga', sans-serif;
     font-size: medium;
 }
 
@@ -188,6 +188,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     z-index: 7;
+    color:#040e35;
 }
 
 .list-nav {
@@ -368,7 +369,7 @@ header {
 /* Footer */
 .foot {
     background-color: #263675;
-    color: #ffffff;
+    color: #adbbda;
     
 }
 
