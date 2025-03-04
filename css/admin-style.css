@@ -52,7 +52,6 @@ h2 {
     text-align: center;
     font-weight: 700;
     font-size: 56px;
-    color: #263675;
 }
 
 h3 {
@@ -63,7 +62,7 @@ h3 {
     text-align: center;
     font-size: 32px;
     font-weight: 500;
-    color: #040e25;
+    color: 040e25;
 }
 
 .section-offset {
@@ -170,6 +169,10 @@ header {
     margin: 0;
 }
 
+.arrow {
+    color: #ffffff;
+}
+
 
 /* Navigation */
 
@@ -219,37 +222,77 @@ header {
 }
 
 
-/* Footer*/ 
+/* Footer */
 .foot {
     background-color: #263675;
     color: #adbbda;
-    width: 100%;
-    padding: 20px 0;  
-    margin: 0;
+    
 }
 
-.foot-container {
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
+.foot-container{
+    padding: 20px 0;
 }
 
-.footer-top {
+.footer-top{
     justify-content: center;
     align-items: center;
+    margin: 0 20px;
     margin-bottom: 50px;
     margin-top: 10px;
 }
 
-.copyright {
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.foot-icon{
+    padding: 0;
+}
+/*
+.foot-content {
+    justify-content: space-between;
+    margin: 0 20px;
+    margin-bottom: 50px;
+}*/
+
+.foot-info {
+    margin: 0;
+    margin-right: 20px;
+    max-width: 700px;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.foot-link {
     padding: 0;
 }
 
-.copyright p {
+.qr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.imgqr {
+    max-width: 150px;
+}
+
+.copyright {
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-grow: 3;
+}
+
+.copyright p{
     margin: 0;
     padding: 0;
 }
@@ -279,14 +322,12 @@ header {
     margin-top: 20px;
 }
 
-/*new section */
 #news-container h3 {
-    border: 2px solid #232323;
+    border: 2px solid #040e25;
     border-radius: 20px;
-    box-shadow: 4px 4px 10px #0e2a8a;
-    margin: 20px 90px 20px 90px;
+    margin-top: 15px;
     font-size: 20px;
-    color: rgb(188, 24, 24);
+    color: #263675;
 }
 
 #news-container ul {
@@ -307,13 +348,14 @@ header {
     text-decoration: underline;
 }
 
-/* Table 2 - Comments & Ratings*/
+/* Table 2 - Comments & Ratings */
 
 .section-offset {
-    width: 100%;
+    width: 90%;
+    margin: 20px auto;
     text-align: center;
 }
-/*
+
 .comments-table {
     width: 100%;
     border-collapse: collapse;
@@ -359,9 +401,21 @@ header {
 
 .submit-btn:hover {
     background-color: #0e2a8a;
-}*/
+}
 
-/* list of news */
+/* Table 3 - Categories */
+
+.search-category {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: georgia, sans-serif;
+}
+
+h3 {
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -383,130 +437,69 @@ select, button {
     border: 1px solid grey;
 }
 
-/*#search-category-btn {
+#search-category-btn {
 background-color: #040e25; 
 color: #adbbda; 
 border: none; 
 cursor: pointer; 
 font-size: 16px; 
-}*/
+}
 
 #search-category-btn:hover {
 background-color: #263675;
 }
- /* comment section */
-#comments-container {
+
+.add-rss-form {
+    background: #adbbda;
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px #adbbda(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
     text-align: center;
 }
 
-h3 {
-    color: #040e25;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 500;
+/* 🌟 Stile del Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-select, textarea, button {
-    width: 100%;
-    margin-top: 10px;
+label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input {
     padding: 10px;
-    border: 1px solid #040e25;
+    border: 1px solid #cccccc;
     border-radius: 5px;
     font-size: 16px;
-    background-color: #e4e4e4;
-    color: #040e25;
-}
-
-textarea {
-    resize: vertical;
+    width: 100%;
 }
 
 button {
-    background: #263675;
-    color: #adbbda;
-    font-size: 16px;
-    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background: #040e25;
+    background-color: #0056b3;
 }
 
-#user-comments {
-    margin-top: 20px;
-}
-
-.comment-box {
-    padding: 10px;
-    border-bottom: 1px solid #040e25;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.comment-box p {
-    margin: 5px 0;
-}
-
-.comment-box a {
-    color: #263675;
-    text-decoration: none;
-}
-
-.comment-box a:hover {
-    text-decoration: underline;
-}
-
-.comments-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.comments-table th, .comments-table td {
-    border: 1px solid #040e25;
-    padding: 10px;
-    text-align: center;
-    background-color: #adbbda;
-    color: #040e25;
-}
-
-.comments-table th {
-    background-color: #263675;
-    color: #adbbda;
-    font-weight: bold;
-}
-
-.comments-table textarea {
-    width: 90%;
-    height: 50px;
-    resize: none;
-    padding: 5px;
-    border: 1px solid #040e25;
-    border-radius: 5px;
-}
-
-.rating-dropdown {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #040e25;
-    background-color: #adbbda;
-    color: #040e25;
-}
-
-.submit-btn {
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: #263675;
-    color: #adbbda;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background-color: #040e25;
+.section-offset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
