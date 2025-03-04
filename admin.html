@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/user-style.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -42,7 +41,7 @@
                     <a href="#1" class="header-link">Users list</a>
                 </li>
                 <li class="header-list-item">
-                    <a href="#2" class="header-link">Rating & Comments</a>
+                    <a href="#2" class="header-link">Comments & Ratings</a>
                 </li>
                 <li class="header-list-item">
                     <a href="#3" class="header-link">Add RSS feed</a>
@@ -101,7 +100,7 @@
         </section>
         
         <!-- Section 3. Form to add new RSS link -->
-        <section class="add-rss-form">
+        <section class="add-rss-form" id="3">
             <h2>Add a new RSS link</h2>
             <form id="rss-form">
                 <label for="rss-name">Feed name:</label>
@@ -117,8 +116,8 @@
         <div id="message"></div>
 
         <!-- Section 4. RSSfeed list -->
-        <section class="section-offset" id="rss-list">
-            <h2>Lista dei Feed RSS</h2>
+        <section class="section-offset" id="4">
+            <h2>RSSFeed List</h2>
             <table id="rss-table" class="table">
                 <thead>
                     <tr>
