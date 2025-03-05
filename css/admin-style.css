@@ -140,10 +140,11 @@ header {
 /* Hero */
 
 .hero {
-    background-image: url('../images/world-news.jpg');
+    background-image: url('../images/logobackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
+    background-position: center center;
     opacity: 0.7;
     text-align: center;
     color: black(255, 255, 255);
@@ -297,60 +298,67 @@ header {
     padding: 0;
 }
 
-/* Search bar */    
+/* Section 1. User List */
 
-.hero-div1 {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 70vh;
-        position: relative;
-   }
-    
-.search-bar {
-        width: 50%; 
-        max-width: 500px;
-        padding: 10px;
-        border-radius: 30px;
-        border: 2px solid #232323;
-        font-size: 1.2rem;
-        text-align: center;
-}
-
-/* Table 1 */
-#news-container {
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
+    background-color: #adbbda;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-#news-container h3 {
-    border: 2px solid #040e25;
-    border-radius: 20px;
-    margin-top: 15px;
-    font-size: 20px;
-    color: #263675;
+/* Stile per le intestazioni della tabella */
+.news-table thead {
+    background-color: #163ec4;
+    color: white;
+    font-weight: bold;
 }
 
-#news-container ul {
-    list-style-type: none;
-    padding: 0;
+.news-table th, .news-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
 }
 
-#news-container li {
-    margin: 5px 0;
+/* Stile per le righe della tabella */
+.news-table tbody tr:nth-child(even) {
+    background-color: #adbbda;
 }
 
-#news-container a {
-    color: #040e25;
-    text-decoration: none;
+/* Stile per il testo nelle celle */
+.news-table td {
+    font-size: 16px;
+    color: #333;
 }
 
-#news-container a:hover {
-    text-decoration: underline;
+/* Stile per i pulsanti nelle azioni */
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-/* Table 2 - Comments & Ratings */
+.edit-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Section 2. Comments & Ratings */
 
 .section-offset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     margin: 20px auto;
     text-align: center;
@@ -389,65 +397,36 @@ header {
     border: 1px solid #ddd;
 }
 
-.submit-btn {
+/* .button {
     margin-top: 5px;
     padding: 5px 10px;
-    background-color: #163ec4;
+    background-color: #35dc43;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.submit-btn:hover {
+.button:hover {
     background-color: #0e2a8a;
-}
+} */
 
-/* Table 3 - Categories */
-
-.search-category {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    font-family: georgia, sans-serif;
-}
-
-h3 {
-    text-align: center;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: none;
+button { /* Questo button vale sia per la sezione 2 che per la 3*/
+    margin-top: 15px;
     padding: 10px;
-    margin: 5px 0;
+    background-color: #dc3545;
+    color: white;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-select, button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid grey;
+button:hover {
+    background-color: rgb(40, 40, 40);
 }
 
-#search-category-btn {
-background-color: #040e25; 
-color: #adbbda; 
-border: none; 
-cursor: pointer; 
-font-size: 16px; 
-}
-
-#search-category-btn:hover {
-background-color: #263675;
-}
+/* Section 3. Form to add new RSS link */
 
 .add-rss-form {
     background: #adbbda;
@@ -483,23 +462,87 @@ input {
     width: 100%;
 }
 
-button {
+.add-feed-btn {
     margin-top: 15px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #007bff; /* Colore azzurro */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #0056b3;
+.add-feed-btn:hover {
+    background-color: #0056b3; /* Colore azzurro più scuro quando il mouse è sopra */
 }
 
-.section-offset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Section 4. RSSfeed list */
+
+.table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Intestazione della tabella */
+.table thead {
+    background: #163ec4;
+    color: white;
+    text-align: center;
+}
+
+.table th, 
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Righe alternate */
+.table tbody tr {
+    background: #adbbda;
+}
+
+/* Pulsante Delete */
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: rgb(40, 40, 40);;
+}
+
+/* Stile per i link */
+.table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.table td a:hover {
+    text-decoration: underline;
+}
+
+/* Responsività */
+@media (max-width: 600px) {
+    .table {
+        font-size: 14px;
+    }
+    .table th, .table td {
+        padding: 8px;
+    }
 }
