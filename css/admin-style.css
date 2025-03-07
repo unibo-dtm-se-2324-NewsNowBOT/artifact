@@ -475,7 +475,7 @@ input {
 }
 
 .add-feed-btn:hover {
-    background-color: #0056b3; /* Colore azzurro più scuro quando il mouse è sopra */
+    background-color: rgb(40, 40, 40);;
 }
 
 /* Section 4. RSSfeed list */
