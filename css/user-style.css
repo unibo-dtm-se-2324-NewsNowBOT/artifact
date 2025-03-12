@@ -432,10 +432,6 @@ button {
     border: none;
 }
 
-button:hover {
-    background: #040e25;
-}
-
 #user-comments {
     margin-top: 20px;
 }
