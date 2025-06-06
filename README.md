@@ -3,7 +3,7 @@
 **NewsNowBot** is a web application that aggregates news from multiple sources using RSS feeds while allowing users to interact through comments and ratings. The platform provides real-time updates and an intuitive interface for browsing the latest news.
 
 ## Current Version
-1.0.0
+v0.7.0
 
 ## Features
 
