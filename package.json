@@ -1,0 +1,15 @@
+{
+  "name": "newsnowbot",
+  "version": "0.7.0",
+  "description": "NewsNowBOT - Web Application for managing and displaying news feeds.",
+  "author": "Gruppo UniBo DTM SE 23/24",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
